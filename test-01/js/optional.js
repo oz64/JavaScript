@@ -17,5 +17,6 @@ replaceInParagraph = function(paragraph){
     para = para.replace(/o/g,character);
     para = para.replace(/u/g,character);
 
+
      console.log(para);
 };
