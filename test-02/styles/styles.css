@@ -1,0 +1,42 @@
+.title
+{
+    text-align: center;
+
+}
+
+.display
+{
+    text-align: left;
+    border: solid;
+    width: 550px;
+    position: relative;
+    padding: 10px;
+    left: 19px;
+}
+
+
+
+.key4
+{
+    height: 200px;
+    width: 600px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    border: 2px solid;
+    position: absolute;
+    right: 200px;
+    top: 100px;
+    padding: 10px;
+
+}
+
+.cell
+{
+    float: left;
+    border: solid black 1px;
+    padding: 14px;
+    top: 50px;
+    margin-top: 10px;
+    margin-left: 19px;
+}
