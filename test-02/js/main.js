@@ -3,6 +3,6 @@
  */
 
 
-var teclas = new Keyboard();
-teclas.drawKeys();
+var keyboard = new Keyboard();
+keyboard.drawKeys();
 
