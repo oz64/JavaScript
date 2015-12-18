@@ -4,8 +4,7 @@
 
 }
 
-.display
-{
+.display {
     text-align: left;
     border: solid;
     width: 550px;
@@ -20,16 +19,12 @@
 {
     height: 200px;
     width: 600px;
-    align-items: center;
-    align-content: center;
-    text-align: center;
     border: 2px solid;
     position: absolute;
-    right: 200px;
-    top: 100px;
+    margin-left: -300px;
+    left: 50%;
     padding: 10px;
-
-}
+    }
 
 .cell
 {
