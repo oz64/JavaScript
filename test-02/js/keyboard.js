@@ -3,40 +3,64 @@
  */
 function Keyboard(){
 
-    this.cell = [];
-
     this.drawKeys = function () {
-        var w = 560;
-
         var containerStr = '<div></div>';
         var containerEl = $(containerStr); //html element
-        for(var i = 0, total = 13, letter=0 ; i < total; i++){
 
-            for(var j = 0; j < 2; j++){
-                var cellEl = $('<div class = "cell">'+ String.fromCharCode(65+letter) +'</div>');
-                cellEl.on('click',eventKey);
-                containerEl.append(cellEl);
-                letter++;
-            }
+        for(var i = 0; i < 26; i++) {
+            var letter = String.fromCharCode(65 + i);
+            var cellEl = $('<div class = "cell" id="'+letter+'">' + letter + '</div>');
+            cellEl.on('click', eventKey);
+            cellEl.on("mouseover",eventSilver);
+            cellEl.on("mouseleave",eventWhite);
+            containerEl.append(cellEl);
         }
-        var cellEl = $('<div class = "cell"> RESET </div>');
+
+        var cellEl = $('<div class = "cell" id="reset"> RESET </div>');
         cellEl.on('click',eventKey);
+        cellEl.on("mouseover",eventSilver);
+        cellEl.on("mouseleave",eventWhite);
         containerEl.append(cellEl);
-        var cellEl = $('<div class = "cell"> SPACE </div>');
+
+        var cellEl = $('<div class = "cell" id="space" > SPACE </div>');
+        cellEl.on("mouseover",eventSilver);
+        cellEl.on("mouseleave",eventWhite);
         cellEl.on('click',eventKey);
         containerEl.append(cellEl);
 
         $('.keys').append(containerEl);
-
     };
 
 }
 
 var eventKey = function (e) {
-        //if(e.target.id == 'space')
-            $('.display').val($('.display').val()+" ");
-        //if(e.target.id == 'reset')
-        //    $('#display').val("");
+    var valueId = $(this).attr("id");
+
+    if (valueId == 'space'){
+        $('.display').append(" ");
+    }
+    else{
+        if(valueId == 'reset'){
+            $('.display').empty();
+            $('.display').css('padding',10);
+        }
+        else{
+            $('.display').append(valueId);
+            $('.display').css('padding',1);
+        }
+    }
+
 };
+
+var eventSilver = function(){
+    var valueId = $(this).attr("id");
+    $('#'+valueId+'').css("background-color", "silver");
+};
+
+var eventWhite = function(){
+    var valueId = $(this).attr("id");
+    $('#'+valueId+'').css("background-color", "white");
+};
+
 
 
